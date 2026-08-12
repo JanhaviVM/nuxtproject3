@@ -1,0 +1,39 @@
+{
+  "name": "nuxtproject3",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.14.1",
+    "@nhost/nhost-js": "^4.7.3",
+    "@pinia/nuxt": "^0.11.3",
+    "@primevue/themes": "^4.5.4",
+    "@vue/apollo-composable": "^4.2.2",
+    "express": "^5.2.1",
+    "graphql": "^16.14.2",
+    "graphql-ws": "^6.2.1",
+    "nuxt": "^4.4.8",
+    "pinia": "^3.0.4",
+    "primeicons": "^7.0.0",
+    "primevue": "^4.5.5",
+    "resend": "^6.19.0",
+    "vue": "^3.5.38",
+    "vue-router": "^5.1.0",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@primevue/nuxt-module": "^4.5.5",
+    "@tailwindcss/vite": "^4.3.2",
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.2.0",
+    "tailwindcss": "^4.3.2",
+    "unplugin-auto-import": "^21.0.0",
+    "vite-plugin-graphql-loader": "^5.1.1"
+  }
+}

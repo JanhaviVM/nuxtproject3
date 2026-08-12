@@ -1,0 +1,25 @@
+query GetTodos($limit: Int!, $offset: Int!, $where: todos_bool_exp) {
+  todos(limit: $limit, offset: $offset, order_by: { created_at: desc }, where: $where) {
+    id
+    title
+    details
+    created_at
+    updated_at
+    user_id
+    users {
+      email
+    }
+    statuses {
+      id
+      name
+    }
+    reminder_at
+    recurrence_type
+    custom_days
+  }
+  todos_aggregate(where: $where) {
+    aggregate {
+      count
+    }
+  }
+}

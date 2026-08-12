@@ -1,0 +1,6 @@
+subscription TodosChanged {
+  todos(limit: 1, order_by: { updated_at: desc }) {
+    id
+    updated_at
+  }
+}

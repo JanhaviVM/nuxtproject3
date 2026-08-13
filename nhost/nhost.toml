@@ -1,5 +1,11 @@
-[postgres.resources.storage]
-capacity = 1
+[hasura]
+version = ''
+adminSecret = '{{ secrets.HASURA_GRAPHQL_ADMIN_SECRET }}'
+webhookSecret = '{{ secrets.NHOST_WEBHOOK_SECRET }}'
+
+[[hasura.jwtSecrets]]
+type = 'HS256'
+key = 'secret'
 
 [[hasura.jwtSecrets]]
 type = "RS256"
@@ -7,6 +13,37 @@ key = "{{ secrets.NHOST_JWT_PUBLIC_KEY }}"
 signingKey = "{{ secrets.NHOST_JWT_PRIVATE_KEY }}"
 kid = "{{ secrets.NHOST_JWT_KID }}"
 
-[[auth.session.accessToken.customClaims]]
-key = 'user-as'
-value = 'appUser.id'
+[hasura.settings]
+corsDomain = ['*']
+devMode = false
+enableAllowList = true
+enableConsole = true
+enableRemoteSchemaPermissions = true
+enabledAPIs = ['metadata']
+liveQueriesMultiplexedRefetchInterval = 1000
+stringifyNumericTypes = false
+
+[hasura.logs]
+level = 'warn'
+
+[hasura.events]
+httpPoolSize = 10
+
+[hasura.resources]
+replicas = 1
+
+[hasura.resources.compute]
+cpu = 500
+memory = 1024
+
+[postgres.resources.storage]
+capacity = 1
+
+[auth.session.accessToken]
+customClaims = [
+  { key = 'user-as', value = 'appUser.id' }
+]
+
+[[global.environment]]
+name = 'GRAFANA_ADMIN_PASSWORD'
+value = '{{ secrets.GRAFANA_ADMIN_PASSWORD }}'

@@ -1,2 +1,2 @@
-[auth.hasura]
+[hasura]
 claims_custom_function = "public.get_custom_jwt_claims"

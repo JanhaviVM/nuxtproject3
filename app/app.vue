@@ -12,6 +12,7 @@ const authStore = useAuthStore()
 
 onMounted(() => {
 authStore.initializeAuth()
+
 })
 </script>
 

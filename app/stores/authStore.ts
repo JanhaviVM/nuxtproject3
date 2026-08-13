@@ -33,6 +33,7 @@ export const useAuthStore = defineStore('auth', () => {
 
         authState.isLoading = false
         authState.isInitialized = true;
+        console.log(authState.session)
     }
 
     const cleanup = () => {

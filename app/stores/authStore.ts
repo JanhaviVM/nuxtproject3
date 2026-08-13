@@ -26,7 +26,6 @@ export const useAuthStore = defineStore('auth', () => {
         authState.isLoading = true
         authState.user = session?.user ?? null
         authState.session = session ?? null
- 
 
         unsubscribe = $nhost.sessionStorage.onChange((currentSession) => {
             reloadSession(currentSession?.refreshTokenId ?? null);
@@ -35,7 +34,6 @@ export const useAuthStore = defineStore('auth', () => {
         authState.isLoading = false
         authState.isInitialized = true;
     }
-
 
     const cleanup = () => {
         if(unsubscribe) {

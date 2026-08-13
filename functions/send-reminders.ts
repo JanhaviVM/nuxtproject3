@@ -1,7 +1,7 @@
 // functions/send-reminders.ts
 import type { Request, Response } from 'express'
 import { Resend } from 'resend'
-
+import { addDays, addMonths, addYears, setDay } from 'date-fns'
 const resend = new Resend(process.env.RESEND_API_KEY)
 
 export default async function handler(req: Request, res: Response) {
@@ -60,6 +60,35 @@ export default async function handler(req: Request, res: Response) {
         subject: `Reminder: ${todo.title}`,
         html: `<p><strong>Task:</strong> ${todo.title}</p>${todo.details ? `<p>${todo.details}</p>` : ''}`,
       })
+
+      const currentReminder = new Date(todo.reminder_at)
+      let nextReminder: Date | null = null
+
+      function getNextWeeklyDate(currentDate: Date, customDays: string[]): Date {
+        const dayNames = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday']
+        const targetDays = customDays.map(d => d.toLowerCase())
+        const nextDate = new Date(currentDate)
+        do {
+          nextDate.setDate(nextDate.getDate() +1)
+        } while(!customDays.includes(dayNames[nextDate.getDay()]))
+          return nextDate
+      }
+      switch(todo.recurrence_type) {
+        case 'WEEKLY':
+        nextReminder = getNextWeeklyDate(currentReminder, todo.custom_days)
+        break
+
+        case 'MONTHLY':
+        nextReminder = addMonths(currentReminder, 1)
+        break
+
+        case 'YEARLY':
+        nextReminder = addYears(currentReminder, 1)
+        break
+        
+        default:
+          nextReminder = null
+      }
 
       sentIds.push(todo.id)
     }

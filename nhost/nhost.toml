@@ -1,4 +1,4 @@
 [auth.session.accessToken]
 customClaims = [
-  { key = "x-hasura-user-as", value = "public.appUsers.id" }
+  { key = "x-hasura-user-as", value = "appUsers.id" }
 ]

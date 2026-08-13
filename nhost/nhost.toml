@@ -7,12 +7,6 @@ webhookSecret = '{{ secrets.NHOST_WEBHOOK_SECRET }}'
 type = 'HS256'
 key = 'secret'
 
-[[hasura.jwtSecrets]]
-type = "RS256"
-key = "{{ secrets.NHOST_JWT_PUBLIC_KEY }}"
-signingKey = "{{ secrets.NHOST_JWT_PRIVATE_KEY }}"
-kid = "{{ secrets.NHOST_JWT_KID }}"
-
 [hasura.settings]
 corsDomain = ['*']
 devMode = false

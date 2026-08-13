@@ -1,2 +1,2 @@
-[hasura]
-claims_custom_function = "public.get_custom_jwt_claims"
+[auth.jwt]
+custom_claims = { 'user-as' = 'user.id' }

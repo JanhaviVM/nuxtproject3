@@ -427,7 +427,7 @@ const onTaskSubmit = (e: FormSubmitEvent) => {
     editMutation({
       id: task.value.id,
       changes: {
-      user_id: task.value.user_id,
+      user_id: "d7be8de7-892e-4300-9864-51a9746dfd07",
       title: e.values.title,
       details: e.values.details || null,
       status: e.values.status,
@@ -441,7 +441,7 @@ const onTaskSubmit = (e: FormSubmitEvent) => {
   
   addTodoMutation({
     object: {
-      user_id: authStore.user?.id,
+      user_id: "d7be8de7-892e-4300-9864-51a9746dfd07",
       title: e.values.title,
       details: e.values.details || null,
       status: e.values.status,

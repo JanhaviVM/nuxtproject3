@@ -6,7 +6,7 @@ query GetTodos($limit: Int!, $offset: Int!, $where: todos_bool_exp) {
     created_at
     updated_at
     user_id
-    users {
+    user {
       email
     }
     statuses {

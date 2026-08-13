@@ -1,3 +1,6 @@
+[postgres.resources.storage]
+capacity = 1
+
 [[hasura.jwtSecrets]]
 type = "RS256"
 key = "{{ secrets.NHOST_JWT_PUBLIC_KEY }}"

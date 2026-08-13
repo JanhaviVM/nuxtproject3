@@ -25,7 +25,7 @@ httpPoolSize = 10
 
 [auth.session.accessToken]
 customClaims = [
-  { key = 'user-as', value = 'appUser.id' }
+  { key = 'user-as', value = 'appUsers.id' }
 ]
 
 [[global.environment]]

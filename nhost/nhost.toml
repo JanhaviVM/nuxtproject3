@@ -1,4 +1,3 @@
-[auth]
-[auth.jwt]
-type = "HS256"
-custom_claims = { 'user-as' = 'user.id' }
+[[auth.session.accessToken.customClaims]]
+key = 'user-as'
+value = 'appUser.id'

@@ -1,7 +1,3 @@
-[[hasura.jwtSecrets]]
-type = 'RS256'
-key = '{{ secrets.NHOST_JWT_PUBLIC_KEY }}'
-
 [auth.session.accessToken]
 customClaims = [
   { key = 'x-hasura-user-as', value = 'appUsers.id' }

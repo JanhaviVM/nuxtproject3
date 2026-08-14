@@ -6,6 +6,9 @@ key = '{{ secrets.NHOST_JWT_PUBLIC_KEY }}'
 [hasura.settings]
 corsDomain = ["http://localhost:3000", "https://*.nhost.run"]
 
+[auth.social.clientUrl]
+url = "http://localhost:3000"
+
 [auth.session.accessToken]
 customClaims = [
   { key = 'x-hasura-user-as', value = 'appUsers.id' }

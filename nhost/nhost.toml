@@ -1,0 +1,13 @@
+[hasura.settings]
+corsDomain = ["http://localhost:3000", "https://*.nhost.run"]
+
+[auth.session.accessToken]
+customClaims = [
+  { key = 'x-hasura-user-as', value = 'appUsers.id' }
+]
+
+[postgres.resources.storage]
+capacity = 1
+
+[observability.grafana]
+adminPassword = '{{ secrets.GRAFANA_ADMIN_PASSWORD }}'

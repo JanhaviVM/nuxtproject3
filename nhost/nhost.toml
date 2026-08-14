@@ -12,7 +12,7 @@ corsDomain = ["http://localhost:3000", "https://*.nhost.run"]
 
 [auth.session.accessToken]
 customClaims = [
-  { key = 'x-hasura-user-as', value = 'public.app_users.id' }
+  { key = 'x-hasura-user-as', value = 'app_users.id' }
 ]
 
 [postgres.resources.storage]

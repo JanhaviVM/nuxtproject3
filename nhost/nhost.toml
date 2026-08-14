@@ -1,3 +1,7 @@
+[[hasura.jwtSecrets]]
+type = 'HS256'
+key = '{{ secrets.HASURA_GRAPHQL_JWT_SECRET }}'
+
 [auth.session.accessToken]
 customClaims = [
   { key = 'x-hasura-user-as', value = 'appUsers.id' }

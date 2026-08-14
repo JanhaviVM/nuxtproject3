@@ -1,7 +1,4 @@
-[auth.session.accessToken]
-customClaims = [
-  { key = 'x-hasura-user-as', value = 'appUsers.id' }
-]
+
 
 [postgres.resources.storage]
 capacity = 1

@@ -4,6 +4,9 @@ key = '{{ secrets.NHOST_JWT_PUBLIC_KEY }}'
 signingKey = '{{ secrets.NHOST_JWT_PRIVATE_KEY }}'
 kid = '{{ secrets.NHOST_JWT_KID }}'
 
+[hasura]
+adminSecret = '{{ secrets.HASURA_GRAPHQL_ADMIN_SECRET }}'
+
 [hasura.settings]
 corsDomain = ["http://localhost:3000", "https://*.nhost.run"]
 

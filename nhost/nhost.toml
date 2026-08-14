@@ -12,3 +12,6 @@ capacity = 1
 
 [observability.grafana]
 adminPassword = '{{ secrets.GRAFANA_ADMIN_PASSWORD }}'
+
+[hasura]
+corsDomain = ["http://localhost:3000", "https://*.nhost.run"]
